@@ -44,9 +44,6 @@ numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
 newlist = [x for x in numbers if x >= 0]
 print(newlist)
 
-
-
-
 ## 2 create a list of integers which specify the length of each word in
 ## a sentence except for the word 'the'
 
@@ -69,26 +66,25 @@ print(carlist)
 
 
 ## Find all the numbers from 1 to 1000 that have a 4 in them
-squares = [i for i in range(1000) if i % 4 == 0]
-print(squares)
+
+fours = [x for x in range(1001) if "4" in str(x)]
+print(fours)
 
 
 ## count how many times the word 'the' appears in the text file - 'sometext.txt'
 myfile = open('sometext.txt','r')
-print(myfile)
-#words1 = myfile.split()
-print(myfile)
-result = [i.count(i) for i in myfile if i == "the"]
-print(result)
+words = myfile.read().lower().replace("\n", " ")
+final = [words.count("the ")]
+print(final)
+
 
 
 ## Extract the numbers from the following phrase ##
 
-#phrase = 'In 1984 there were 13 instances of a protest with over 1000 people attending. On average there were 15 reported injuries at each " +
-#"event, with about 3 or 4 that were classifled as serious per event.'
+phrase = 'In 1984 there were 13 instances of a protest with over 1000 people attending. On average there were 15 reported injuries at each event, with about 3 or 4 that were classifled as serious per event.'
 
-
-
+result2 = [x for x in phrase if x.isdigit()]
+print(result2)
 
 
 

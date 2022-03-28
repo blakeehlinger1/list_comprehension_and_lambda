@@ -7,6 +7,9 @@ Even numbers from the said list:
 Odd numbers from the said list:
 [1, 3, 5, 7, 9]
 '''
+from tkinter.tix import CheckList
+
+
 list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 evenfiltered_list = list(filter(lambda num: (num % 2 == 0),list1))
@@ -62,6 +65,7 @@ print(clear_list)
 ''' 5)
 find the elements of a given list of strings that contain specific substring using lambda
 Original list:
+
 ['red', 'black', 'white', 'green', 'orange']
 Substring to search:
 ack
@@ -74,6 +78,17 @@ Elements of the said list that contain specific substring:
 
 '''
 
+list5 = ['red', 'black', 'white', 'green', 'orange']
+
+sub = 'ack'
+
+strings = list(filter(lambda x: sub in x,list5))
+print(strings)
+
+sub2 = 'abc'
+strings2 = list(filter(lambda x: sub2 in x,list5))
+
+print(strings2)
 
 
 
@@ -84,11 +99,16 @@ check whether a given string contains a capital letter, a lower case letter, a n
 (This is like a password verification function, HINT: Python function 'any' may be useful)
 '''
 
+example = input('Enter a Passoword: ')
 
-
-
-
-
+rules = [lambda x: any(x.isupper() for x in example),
+        lambda x: any(x.islower() for x in example),
+        lambda x: any(x.isdigit() for x in example),
+        lambda x: len(example) >= 8]
+if all(rule(example) for rule in rules):
+    print("Valid Password")
+else:
+    print("Invalid Password")
 
 ''' 7)
 Write a Python program to sort a list of tuples using Lambda.
@@ -99,3 +119,7 @@ original_scores = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sci
 # Expected Result:
 # [('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
 '''
+original_scores = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
+
+filterlist = sorted(original_scores,key=lambda x: x[1])
+print(filterlist)
