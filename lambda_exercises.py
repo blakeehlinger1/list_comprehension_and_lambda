@@ -99,7 +99,7 @@ check whether a given string contains a capital letter, a lower case letter, a n
 (This is like a password verification function, HINT: Python function 'any' may be useful)
 '''
 
-example = input('Enter a Passoword: ')
+example = input('Enter a Password: ')
 
 rules = [lambda x: any(x.isupper() for x in example),
         lambda x: any(x.islower() for x in example),
